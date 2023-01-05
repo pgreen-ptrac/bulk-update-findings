@@ -91,10 +91,10 @@ class LogFormatHandler():
 
 
 script_info = ["===================================================================",
-               "= Example Authentication Script                                   =",
+               "= Bulk Update Findings   Script                                   =",
                "=-----------------------------------------------------------------=",
-               "=  Walks the user through the process of getting auth info, then  =",
-               "=  validates the info with Plextrac's authenticate endpoints.     =",
+               "=  The user can select a Client to update all findings across     =",
+               "=  each report on the client.                                     =",
                "=                                                                 =",
                "==================================================================="
             ]

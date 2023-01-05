@@ -199,8 +199,21 @@ def request_list_client_reports(base_url, headers, client_id):
     path = f'/client/{client_id}/reports'
     return request_get(base_url, root, path, name, headers)
 
-def request_export_report_to_ptrac(base_url, headers, client_id, report_id):
-    name = "Export Report to Ptrac"
+def request_bulk_update_findings_status(base_url, headers, client_id, report_id, findings, status):
+    name = "Bulk Update Findings Status"
+    root = "/api/v2"
+    path = f'/clients/{client_id}/reports/{report_id}/findings'
+    payload = {
+    	"findings": findings,
+    	"data": {
+    		"status": status
+    	}
+    }
+    return request_put(base_url, root, path, name, headers, payload)
+
+#----------Finding Endpoints----------
+def request_list_report_findings(base_url, headers, client_id, report_id):
+    name = "List Report Findings"
     root = "/api/v1"
-    path = f'/client/{client_id}/report/{report_id}/export/ptrac'
+    path = f'/client/{client_id}/report/{report_id}/flaws'
     return request_get(base_url, root, path, name, headers)
