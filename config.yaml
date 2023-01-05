@@ -1,0 +1,4 @@
+# instance_url should be full Plextrac instance URL i.e. https://example.plextrac.com
+instance_url: 
+username: 
+password: 
