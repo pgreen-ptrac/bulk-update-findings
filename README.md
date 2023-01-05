@@ -1,5 +1,7 @@
-# api-script-authenticate
-Example script to run through prompting a user for their login info and authenticating the user into an instance of Plextrac.
+# bulk-update-findings
+Script to run through prompting a user to select an existing client in Plextrac and which finding status to update to. Script then updates all findings on all reports of the selected client with the selected findings status.
+
+Currently in platform you are limited to editing client findings to batches of 100. You can update all findings on a single report, but this isn't efficient the more reports you have. This script extends that functionality to allow quick bulk updates to all findings in a client.
 
 # Requirements
 - [Python 3+](https://www.python.org/downloads/)
@@ -28,9 +30,4 @@ You can add the following values to the config.yaml file. If a value is not set,
 - Username
 - Password
 - MFA Token (if enabled)
-
-## Script Execution Flow
-- Prompts user for Plextrac instance URL
-  - Validate URL points to a running instance of Plextrac
-- Prompts user for username, password, and mfa (if applicable)
-- Calls authenticate endpoints and stores Authoirzation headers for future use
+- Client Name
